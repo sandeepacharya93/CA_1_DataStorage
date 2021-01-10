@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Bike_Sales_Reports", "Bike_Sales_Reports\Bike_Sales_Reports.rptproj", "{F7FA2291-52A1-4EF9-AAB3-64069362BE87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7FA2291-52A1-4EF9-AAB3-64069362BE87}.Debug|Default.ActiveCfg = Debug
+		{F7FA2291-52A1-4EF9-AAB3-64069362BE87}.Debug|Default.Build.0 = Debug
+		{F7FA2291-52A1-4EF9-AAB3-64069362BE87}.Debug|Default.Deploy.0 = Debug
+		{F7FA2291-52A1-4EF9-AAB3-64069362BE87}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{F7FA2291-52A1-4EF9-AAB3-64069362BE87}.DebugLocal|Default.Build.0 = DebugLocal
+		{F7FA2291-52A1-4EF9-AAB3-64069362BE87}.Release|Default.ActiveCfg = Release
+		{F7FA2291-52A1-4EF9-AAB3-64069362BE87}.Release|Default.Build.0 = Release
+		{F7FA2291-52A1-4EF9-AAB3-64069362BE87}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB242C3C-AE5B-45CF-A04E-9F0DC53A820D}
+	EndGlobalSection
+EndGlobal

@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{643D5404-5046-44E6-9C5A-87399EA2D6B8}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{86689A4E-DC33-4857-B16D-4ECE5C562F89}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -347,45 +347,45 @@ FROM   sales.staffs</property>
                   name="ADO NET Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[staff_id]"
-                      cachedDataType="i4"
-                      cachedName="staff_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[staff_id]"
-                      lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[staff_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[first_name]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="first_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[first_name]"
-                      lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[first_name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[last_name]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="last_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[last_name]"
-                      lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[last_name]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[email]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="email"
-                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[email]"
+                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Email]"
                       lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[email]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[phone]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="phone"
-                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Phone]"
                       lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[phone]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[active]"
                       cachedDataType="ui1"
                       cachedName="active"
-                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[active]"
+                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
                       lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[active]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[staff_id]"
+                      cachedDataType="i4"
+                      cachedName="staff_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StaffId]"
+                      lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[staff_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[first_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[last_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Data Flow Task\sales_staff ADO NET Source.Outputs[ADO NET Source Output].Columns[last_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -394,33 +394,33 @@ FROM   sales.staffs</property>
                       dataType="i4"
                       name="StaffKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[staff_id]"
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StaffId]"
                       dataType="i4"
-                      name="staff_id" />
+                      name="StaffId" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[first_name]"
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FirstName]"
                       dataType="wstr"
                       length="60"
-                      name="first_name" />
+                      name="FirstName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[last_name]"
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LastName]"
                       dataType="wstr"
                       length="60"
-                      name="last_name" />
+                      name="LastName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[email]"
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Email]"
                       dataType="wstr"
                       length="255"
-                      name="email" />
+                      name="Email" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Phone]"
                       dataType="wstr"
                       length="25"
-                      name="phone" />
+                      name="Phone" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[active]"
+                      refId="Package\Data Flow Task\Staff_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
                       dataType="ui1"
-                      name="active" />
+                      name="Active" />
                   </externalMetadataColumns>
                 </input>
               </inputs>

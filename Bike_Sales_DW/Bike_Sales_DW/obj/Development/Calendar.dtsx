@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{9785862D-7635-4D46-A949-D218D8B5ABA5}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{223DD2B1-94DA-4916-A122-186D2D1DD72B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -112,20 +112,20 @@
                       cachedDataType="wstr"
                       cachedLength="9"
                       cachedName="Day_of_Week"
-                      externalMetadataColumnId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Day_of_Week]"
+                      externalMetadataColumnId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DayofWeek_]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Day_of_Week]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Day_Type]"
                       cachedDataType="wstr"
                       cachedLength="7"
                       cachedName="Day_Type"
-                      externalMetadataColumnId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Day_Type]"
+                      externalMetadataColumnId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DayType]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Day_Type]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Day_of_Month]"
                       cachedDataType="i4"
                       cachedName="Day_of_Month"
-                      externalMetadataColumnId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Day_of_Month_]"
+                      externalMetadataColumnId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DayofMonth_]"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Day_of_Month]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Month]"
@@ -158,19 +158,19 @@
                       dataType="dbTimeStamp"
                       name="FullDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Day_of_Week]"
+                      refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DayofWeek_]"
                       dataType="wstr"
                       length="15"
-                      name="Day_of_Week" />
+                      name="DayofWeek_" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Day_Type]"
+                      refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DayType]"
                       dataType="wstr"
                       length="20"
-                      name="Day_Type" />
+                      name="DayType" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Day_of_Month_]"
+                      refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DayofMonth_]"
                       dataType="i4"
-                      name="Day_of_Month_" />
+                      name="DayofMonth_" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Calender_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Month_]"
                       dataType="wstr"
@@ -647,7 +647,7 @@ FROM   sales.orders</property>
         <NodeLayout
           Size="254.666666666667,42.6666666666667"
           Id="Package\Data Flow Task\Calender_Dim ADO NET Destination"
-          TopLeft="441.333333333333,264" />
+          TopLeft="441.95833332402,264.684210539194" />
         <NodeLayout
           Size="98.6666666666667,42.6666666666667"
           Id="Package\Data Flow Task\Sort"
@@ -696,26 +696,26 @@ FROM   sales.orders</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.3333333333334,25.3333333333333"
+              EndConnector="31.9583333240201,26.0175438725277"
               Start="0,0"
-              End="31.3333333333334,17.8333333333333">
+              End="31.9583333240201,18.5175438725277">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.66666666666667" />
+                    End="0,9.00877193626387" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.66666666666667"
-                    Point2="0,12.6666666666667"
-                    Point3="4,12.6666666666667" />
+                    Point1="0,9.00877193626387"
+                    Point2="0,13.0087719362639"
+                    Point3="4,13.0087719362639" />
                   <mssgle:LineSegment
-                    End="27.3333333333334,12.6666666666667" />
+                    End="27.9583333240201,13.0087719362639" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.3333333333334,12.6666666666667"
-                    Point2="31.3333333333334,12.6666666666667"
-                    Point3="31.3333333333334,16.6666666666667" />
+                    Point1="27.9583333240201,13.0087719362639"
+                    Point2="31.9583333240201,13.0087719362639"
+                    Point3="31.9583333240201,17.0087719362639" />
                   <mssgle:LineSegment
-                    End="31.3333333333334,17.8333333333333" />
+                    End="31.9583333240201,18.5175438725277" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

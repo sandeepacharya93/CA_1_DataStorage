@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{FD117388-1973-4D12-9271-D23776793159}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{E2019D67-F3B2-4724-939F-1341ABFD9FF4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -346,59 +346,59 @@ FROM   sales.stores</property>
                   name="ADO NET Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[store_id]"
-                      cachedDataType="i4"
-                      cachedName="store_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[store_id]"
-                      lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[store_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[store_name]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="store_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[store_name]"
-                      lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[store_name]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[phone]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="phone"
-                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Phone]"
                       lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[phone]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[email]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="email"
-                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[email]"
+                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Email]"
                       lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[email]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[street]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="street"
-                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[street]"
+                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Street]"
                       lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[street]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[city]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="city"
-                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[city]"
+                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[City]"
                       lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[store_id]"
+                      cachedDataType="i4"
+                      cachedName="store_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StoreId]"
+                      lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[store_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[store_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="store_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StoreName]"
+                      lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[store_name]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[state]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="state"
-                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[state]"
+                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[State_]"
                       lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[state]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].Columns[zip_code]"
                       cachedDataType="wstr"
                       cachedLength="5"
                       cachedName="zip_code"
-                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[zip_code]"
+                      externalMetadataColumnId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ZipCode]"
                       lineageId="Package\Data Flow Task\sales_stores ADO Net Source.Outputs[ADO NET Source Output].Columns[zip_code]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -408,44 +408,44 @@ FROM   sales.stores</property>
                       dataType="i4"
                       name="StoreKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[store_id]"
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StoreId]"
                       dataType="i4"
-                      name="store_id" />
+                      name="StoreId" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[store_name]"
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StoreName]"
                       dataType="wstr"
                       length="255"
-                      name="store_name" />
+                      name="StoreName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[email]"
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Email]"
                       dataType="wstr"
                       length="255"
-                      name="email" />
+                      name="Email" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[street]"
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Street]"
                       dataType="wstr"
                       length="255"
-                      name="street" />
+                      name="Street" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Phone]"
                       dataType="wstr"
                       length="25"
-                      name="phone" />
+                      name="Phone" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[city]"
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[City]"
                       dataType="wstr"
                       length="255"
-                      name="city" />
+                      name="City" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[state]"
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[State_]"
                       dataType="wstr"
                       length="10"
-                      name="state" />
+                      name="State_" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[zip_code]"
+                      refId="Package\Data Flow Task\Store_Dim ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ZipCode]"
                       dataType="wstr"
                       length="5"
-                      name="zip_code" />
+                      name="ZipCode" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -511,13 +511,13 @@ FROM   sales.stores</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="221.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task\sales_stores ADO Net Source"
-          TopLeft="389,39.2857142857143" />
-        <NodeLayout
           Size="236,42.6666666666667"
           Id="Package\Data Flow Task\Store_Dim ADO NET Destination"
           TopLeft="398.571428571429,205.714285714286" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\sales_stores ADO Net Source"
+          TopLeft="389,39.2857142857143" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
           TopLeft="499.666666666667,81.952380952381">

@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{4AFBC427-38DE-4384-90ED-6E8C9D00C176}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{62EAA87D-D42B-43D4-95F3-2D9026F241D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -124,7 +124,7 @@ where [refTable].[FullDate] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CalendarKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day_of_Week" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Day_Type" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Day_of_Month_" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month_" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quarter_" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Year_" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CalendarKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayofWeek_" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DayType" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DayofMonth_" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month_" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quarter_" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Year_" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -251,7 +251,7 @@ where [refTable].[FullDate] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Product_Dim]) [refTable]
-where [refTable].[product_id] = ?</property>
+where [refTable].[ProductId] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -282,7 +282,7 @@ where [refTable].[product_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="product_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="product_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="brand_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="catergory_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="list_price" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductName" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="BrandName" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CategoryName" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ListPrice" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -319,7 +319,7 @@ where [refTable].[product_id] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">product_id</property>
+                          name="JoinToReferenceColumn">ProductId</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -461,36 +461,6 @@ where [refTable].[product_id] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_id]"
-                      cachedDataType="i4"
-                      cachedName="order_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
-                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[discount]"
-                      cachedDataType="numeric"
-                      cachedName="discount"
-                      cachedPrecision="4"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[discount]"
-                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[selling_price]"
-                      cachedDataType="numeric"
-                      cachedName="selling_price"
-                      cachedPrecision="16"
-                      cachedScale="4"
-                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[selling_price]"
-                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[selling_price]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Total_Price]"
-                      cachedDataType="numeric"
-                      cachedName="Total_Price"
-                      cachedPrecision="27"
-                      cachedScale="4"
-                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Price]"
-                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[Total_Price]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quantity]"
                       cachedDataType="i4"
                       cachedName="Quantity"
@@ -520,6 +490,36 @@ where [refTable].[product_id] = ?</property>
                       cachedName="StoreKey"
                       externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StoreKey]"
                       lineageId="Package\Data Flow Task\Store_Dim Lookup.Outputs[Lookup Match Output].Columns[StoreKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_id]"
+                      cachedDataType="i4"
+                      cachedName="order_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderId]"
+                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[selling_price]"
+                      cachedDataType="numeric"
+                      cachedName="selling_price"
+                      cachedPrecision="16"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellingPrice]"
+                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[selling_price]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Discount]"
+                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Total_Price]"
+                      cachedDataType="numeric"
+                      cachedName="Total_Price"
+                      cachedPrecision="27"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrice]"
+                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[Total_Price]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -540,29 +540,29 @@ where [refTable].[product_id] = ?</property>
                       dataType="i4"
                       name="ProductKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
-                      dataType="i4"
-                      name="order_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[selling_price]"
-                      dataType="numeric"
-                      name="selling_price"
-                      precision="10"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[discount]"
-                      dataType="numeric"
-                      name="discount"
-                      precision="4"
-                      scale="2" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
                       dataType="i4"
                       name="Quantity" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Price]"
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderId]"
                       dataType="i4"
-                      name="Total_Price" />
+                      name="OrderId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellingPrice]"
+                      dataType="numeric"
+                      name="SellingPrice"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Discount]"
+                      dataType="numeric"
+                      name="Discount"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrice]"
+                      dataType="i4"
+                      name="TotalPrice" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -884,7 +884,7 @@ FROM   sales.order_items INNER JOIN
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Staff_Dim]) [refTable]
-where [refTable].[staff_id] = ?</property>
+where [refTable].[StaffId] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -915,7 +915,7 @@ where [refTable].[staff_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StaffKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="staff_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="first_name" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="last_name" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="email" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="phone" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="active" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StaffKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StaffId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FirstName" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LastName" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Email" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Phone" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Active" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -952,7 +952,7 @@ where [refTable].[staff_id] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">staff_id</property>
+                          name="JoinToReferenceColumn">StaffId</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -1042,7 +1042,7 @@ where [refTable].[staff_id] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Store_Dim]) [refTable]
-where [refTable].[store_id] = ?</property>
+where [refTable].[StoreId] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -1073,7 +1073,7 @@ where [refTable].[store_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StoreKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="email" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="street" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="phone" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="city" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="state" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="zip_code" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StoreKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreName" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Email" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Street" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Phone" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="City" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="State_" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ZipCode" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1110,7 +1110,7 @@ where [refTable].[store_id] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">store_id</property>
+                          name="JoinToReferenceColumn">StoreId</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -1236,17 +1236,29 @@ where [refTable].[store_id] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="212,42.6666666666667"
-          Id="Package\Data Flow Task\Sales_Fact OLE DB Source"
-          TopLeft="533.692307692308,46.9230769230769" />
+          Size="185.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\Calendar_Dim Lookup"
+          TopLeft="567.692307692308,133.846153846154" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Data Flow Task\Staff_Dim Lookup"
           TopLeft="611.538461538461,216.153846153846" />
         <NodeLayout
-          Size="185.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task\Calendar_Dim Lookup"
-          TopLeft="567.692307692308,133.846153846154" />
+          Size="178.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Product_Dim Lookup"
+          TopLeft="661.874990137294,311.315795333432" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\Data Flow Task\Store_Dim Lookup"
+          TopLeft="733.124989075586,387.771936997923" />
+        <NodeLayout
+          Size="212,42.6666666666667"
+          Id="Package\Data Flow Task\Sales_Fact OLE DB Source"
+          TopLeft="533.692307692308,46.9230769230769" />
+        <NodeLayout
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Sales_Fact OLE DB Destination"
+          TopLeft="791.874988200143,461.701761507812" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="639.692307692308,89.5897435897436">
@@ -1279,6 +1291,114 @@ where [refTable].[store_id] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
+          TopLeft="817.124989075586,430.438603664589">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.0833324578902,31.2631578432225"
+              Start="0,0"
+              End="90.0833324578902,23.7631578432225">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6315789216112" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6315789216112"
+                    Point2="0,15.6315789216112"
+                    Point3="4,15.6315789216112" />
+                  <mssgle:LineSegment
+                    End="86.0833324578902,15.6315789216112" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.0833324578902,15.6315789216112"
+                    Point2="90.0833324578902,15.6315789216112"
+                    Point3="90.0833324578902,19.6315789216112" />
+                  <mssgle:LineSegment
+                    End="90.0833324578902,23.7631578432225" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-3.14972048980493,20.6315789216112,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
+          TopLeft="751.208323470627,353.982462000098">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.916665604959,33.7894749978243"
+              Start="0,0"
+              End="65.916665604959,26.2894749978243">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.8947374989121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.8947374989121"
+                    Point2="0,16.8947374989122"
+                    Point3="4,16.8947374989122" />
+                  <mssgle:LineSegment
+                    End="61.916665604959,16.8947374989122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.916665604959,16.8947374989122"
+                    Point2="65.916665604959,16.8947374989122"
+                    Point3="65.916665604959,20.8947374989122" />
+                  <mssgle:LineSegment
+                    End="65.916665604959,26.2894749978243" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.2330539162705,21.8947374989122,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
+          TopLeft="693.538461538461,258.820512820513">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.6698619321664,52.4952825129191"
+              Start="0,0"
+              End="57.6698619321664,44.9952825129191">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2476412564596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2476412564596"
+                    Point2="0,26.2476412564596"
+                    Point3="4,26.2476412564596" />
+                  <mssgle:LineSegment
+                    End="53.6698619321664,26.2476412564596" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.6698619321664,26.2476412564596"
+                    Point2="57.6698619321664,26.2476412564596"
+                    Point3="57.6698619321664,30.2476412564596" />
+                  <mssgle:LineSegment
+                    End="57.6698619321664,44.9952825129191" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.3564557526668,31.2476412564596,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1317,132 +1437,27 @@ where [refTable].[store_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="178.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\Product_Dim Lookup"
-          TopLeft="661.874990137294,311.315795333432" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="693.538461538461,258.820512820513">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="57.6698619321664,52.4952825129191"
-              Start="0,0"
-              End="57.6698619321664,44.9952825129191">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.2476412564596" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.2476412564596"
-                    Point2="0,26.2476412564596"
-                    Point3="4,26.2476412564596" />
-                  <mssgle:LineSegment
-                    End="53.6698619321664,26.2476412564596" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.6698619321664,26.2476412564596"
-                    Point2="57.6698619321664,26.2476412564596"
-                    Point3="57.6698619321664,30.2476412564596" />
-                  <mssgle:LineSegment
-                    End="57.6698619321664,44.9952825129191" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-19.3564557526668,31.2476412564596,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\Data Flow Task\Store_Dim Lookup"
-          TopLeft="733.124989075586,387.771936997923" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="751.208323470627,353.982462000098">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="65.916665604959,33.7894749978243"
-              Start="0,0"
-              End="65.916665604959,26.2894749978243">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.8947374989121" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.8947374989121"
-                    Point2="0,16.8947374989122"
-                    Point3="4,16.8947374989122" />
-                  <mssgle:LineSegment
-                    End="61.916665604959,16.8947374989122" />
-                  <mssgle:CubicBezierSegment
-                    Point1="61.916665604959,16.8947374989122"
-                    Point2="65.916665604959,16.8947374989122"
-                    Point3="65.916665604959,20.8947374989122" />
-                  <mssgle:LineSegment
-                    End="65.916665604959,26.2894749978243" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.2330539162705,21.8947374989122,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="230.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\Sales_Fact OLE DB Destination"
-          TopLeft="791.874988200143,461.701761507812" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
-          TopLeft="817.124989075586,430.438603664589">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="90.0833324578902,31.2631578432225"
-              Start="0,0"
-              End="90.0833324578902,23.7631578432225">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.6315789216112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.6315789216112"
-                    Point2="0,15.6315789216112"
-                    Point3="4,15.6315789216112" />
-                  <mssgle:LineSegment
-                    End="86.0833324578902,15.6315789216112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="86.0833324578902,15.6315789216112"
-                    Point2="90.0833324578902,15.6315789216112"
-                    Point3="90.0833324578902,19.6315789216112" />
-                  <mssgle:LineSegment
-                    End="90.0833324578902,23.7631578432225" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.14972048980493,20.6315789216112,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Sales_Fact OLE DB Source">
+    design-time-name="Package\Data Flow Task\Calendar_Dim Lookup">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Calendar_Dim]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -1472,29 +1487,6 @@ where [refTable].[store_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Calendar_Dim Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Calendar_Dim]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Product_Dim Lookup">
     <Properties>
       <Property>
@@ -1510,7 +1502,7 @@ where [refTable].[store_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1533,8 +1525,16 @@ where [refTable].[store_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Sales_Fact OLE DB Source">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

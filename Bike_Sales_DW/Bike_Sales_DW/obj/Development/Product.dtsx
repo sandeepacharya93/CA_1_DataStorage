@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{EAAA6EF5-3DA2-4CB8-8821-0DDD2F2483BC}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{5139B6EC-3F46-4569-86C2-1BC6916F7917}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -291,37 +291,37 @@ FROM   production.categories INNER JOIN
                       refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[product_id]"
                       cachedDataType="i4"
                       cachedName="product_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[product_id]"
+                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ProductId]"
                       lineageId="Package\Data Flow Task\production_products ADO NET Source.Outputs[ADO NET Source Output].Columns[product_id]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[product_name]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="product_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[product_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ProductName]"
                       lineageId="Package\Data Flow Task\production_products ADO NET Source.Outputs[ADO NET Source Output].Columns[product_name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[list_price]"
-                      cachedDataType="numeric"
-                      cachedName="list_price"
-                      cachedPrecision="10"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[list_price]"
-                      lineageId="Package\Data Flow Task\production_products ADO NET Source.Outputs[ADO NET Source Output].Columns[list_price]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[brand_name]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="brand_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[brand_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[BrandName]"
                       lineageId="Package\Data Flow Task\production_products ADO NET Source.Outputs[ADO NET Source Output].Columns[brand_name]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[category_name]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="category_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[catergory_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[CategoryName]"
                       lineageId="Package\Data Flow Task\production_products ADO NET Source.Outputs[ADO NET Source Output].Columns[category_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].Columns[list_price]"
+                      cachedDataType="numeric"
+                      cachedName="list_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ListPrice]"
+                      lineageId="Package\Data Flow Task\production_products ADO NET Source.Outputs[ADO NET Source Output].Columns[list_price]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -330,28 +330,28 @@ FROM   production.categories INNER JOIN
                       dataType="i4"
                       name="ProductKey" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[product_id]"
+                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ProductId]"
                       dataType="i4"
-                      name="product_id" />
+                      name="ProductId" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[product_name]"
+                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ProductName]"
                       dataType="wstr"
                       length="255"
-                      name="product_name" />
+                      name="ProductName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[brand_name]"
+                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[BrandName]"
                       dataType="wstr"
                       length="255"
-                      name="brand_name" />
+                      name="BrandName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[catergory_name]"
+                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[CategoryName]"
                       dataType="wstr"
                       length="255"
-                      name="catergory_name" />
+                      name="CategoryName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[list_price]"
+                      refId="Package\Data Flow Task\Product_Dim ADO NET Destination 1.Inputs[ADO NET Destination Input].ExternalColumns[ListPrice]"
                       dataType="numeric"
-                      name="list_price"
+                      name="ListPrice"
                       precision="10"
                       scale="2" />
                   </externalMetadataColumns>
