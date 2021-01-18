@@ -47,9 +47,24 @@ CREATE TABLE Calendar_Dim(
 	PRIMARY KEY (CalendarKey)
 	);
 
+CREATE TABLE Customer_Dim(
+	CustomerKey INT NOT NULL IDENTITY,
+	CustomerId INT NOT NULL,
+	FirstName varchar(255),
+	LastName varchar(255),
+	Phone varchar(25),
+	Email varchar(255),
+	Street varchar(255),
+	City varchar(50),
+	State_ varchar(25),
+	ZipCode varchar(25),
+	PRIMARY KEY (CustomerKey)
+	);
+
 CREATE TABLE Sales_Fact(
 	StaffKey INT,
 	CalendarKey INT,
+	CustomerKey INT,
 	StoreKey INT,
 	ProductKey INT,
 	OrderId INT,
@@ -57,9 +72,10 @@ CREATE TABLE Sales_Fact(
 	Discount decimal(4,2),
 	Quantity INT,
 	TotalPrice INT,
-	PRIMARY KEY (StaffKey,StoreKey,CalendarKey,ProductKey,OrderId),
+	PRIMARY KEY (StaffKey,StoreKey,CalendarKey,CustomerKey,ProductKey,OrderId),
 	FOREIGN KEY (StaffKey) REFERENCES Staff_Dim(StaffKey),
 	FOREIGN KEY (CalendarKey) REFERENCES Calendar_Dim(CalendarKey),
+	FOREIGN KEY (CustomerKey) REFERENCES Customer_Dim(CustomerKey),
 	FOREIGN KEY (ProductKey) REFERENCES Product_Dim(ProductKey),
 	FOREIGN KEY (StoreKey) REFERENCES Store_Dim(StoreKey)
 	);

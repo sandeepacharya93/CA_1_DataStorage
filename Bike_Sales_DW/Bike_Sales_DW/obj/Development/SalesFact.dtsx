@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{62EAA87D-D42B-43D4-95F3-2D9026F241D0}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{E3DAA7E2-0F08-43DF-BAA0-83861EC1EB5C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -223,6 +223,164 @@ where [refTable].[FullDate] = ?</property>
                       refId="Package\Data Flow Task\Calendar_Dim Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow Task\Calendar_Dim Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Customer_Dim_Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Customer_Dim_Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Customer_Dim]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Customer_Dim]) [refTable]
+where [refTable].[CustomerId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CustomerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FirstName" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LastName" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Phone" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Email" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Street" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="City" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="State_" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ZipCode" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Customer_Dim_Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-R2UHTJUD\SQLEXPRESS.Bike_Sales_DW1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-R2UHTJUD\SQLEXPRESS.Bike_Sales_DW1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Customer_Dim_Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Customer_Dim_Lookup.Inputs[Lookup Input].Columns[customer_id]"
+                      cachedDataType="i4"
+                      cachedName="customer_id"
+                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CustomerId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Customer_Dim_Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Match Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Match Output].Columns[CustomerKey]"
+                      name="CustomerKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CustomerKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Customer_Dim_Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Customer_Dim_Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -520,6 +678,12 @@ where [refTable].[ProductId] = ?</property>
                       cachedScale="4"
                       externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrice]"
                       lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[Total_Price]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerKey]"
+                      cachedDataType="i4"
+                      cachedName="CustomerKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                      lineageId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Match Output].Columns[CustomerKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -563,6 +727,10 @@ where [refTable].[ProductId] = ?</property>
                       refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrice]"
                       dataType="i4"
                       name="TotalPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -617,10 +785,11 @@ where [refTable].[ProductId] = ?</property>
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT sales.orders.order_id, sales.order_items.discount, production.products.list_price - production.products.list_price * sales.order_items.discount AS selling_price, (production.products.list_price - production.products.list_price * sales.order_items.discount) 
-             * sales.order_items.quantity AS Total_Price, sales.order_items.quantity AS Quantity, sales.order_items.product_id, sales.orders.store_id, sales.orders.staff_id, sales.orders.order_date
+             * sales.order_items.quantity AS Total_Price, sales.order_items.quantity AS Quantity, sales.order_items.product_id, sales.orders.store_id, sales.orders.staff_id, sales.orders.order_date, sales.customers.customer_id
 FROM   sales.order_items INNER JOIN
              sales.orders ON sales.order_items.order_id = sales.orders.order_id INNER JOIN
-             production.products ON sales.order_items.product_id = production.products.product_id</property>
+             production.products ON sales.order_items.product_id = production.products.product_id INNER JOIN
+             sales.customers ON sales.orders.customer_id = sales.customers.customer_id</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -743,6 +912,15 @@ FROM   sales.order_items INNER JOIN
                       lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
                       name="order_date"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -788,6 +966,10 @@ FROM   sales.order_items INNER JOIN
                       refId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
                       dataType="dbDate"
                       name="order_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -846,6 +1028,11 @@ FROM   sales.order_items INNER JOIN
                       dataType="dbDate"
                       lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
                       name="order_date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
                     <outputColumn
                       refId="Package\Data Flow Task\Sales_Fact OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1198,9 +1385,14 @@ where [refTable].[StoreId] = ?</property>
               startId="Package\Data Flow Task\Product_Dim Lookup.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup Match Output3]"
-              endId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\Customer_Dim_Lookup.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Data Flow Task\Store_Dim Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output4]"
+              endId="Package\Data Flow Task\Sales_Fact OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Customer_Dim_Lookup.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
               endId="Package\Data Flow Task\Calendar_Dim Lookup.Inputs[Lookup Input]"
@@ -1258,7 +1450,7 @@ where [refTable].[StoreId] = ?</property>
         <NodeLayout
           Size="230.666666666667,42.6666666666667"
           Id="Package\Data Flow Task\Sales_Fact OLE DB Destination"
-          TopLeft="791.874988200143,461.701761507812" />
+          TopLeft="944.999985918403,532.688604949226" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="639.692307692308,89.5897435897436">
@@ -1291,42 +1483,6 @@ where [refTable].[StoreId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
-          TopLeft="817.124989075586,430.438603664589">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="90.0833324578902,31.2631578432225"
-              Start="0,0"
-              End="90.0833324578902,23.7631578432225">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.6315789216112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.6315789216112"
-                    Point2="0,15.6315789216112"
-                    Point3="4,15.6315789216112" />
-                  <mssgle:LineSegment
-                    End="86.0833324578902,15.6315789216112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="86.0833324578902,15.6315789216112"
-                    Point2="90.0833324578902,15.6315789216112"
-                    Point3="90.0833324578902,19.6315789216112" />
-                  <mssgle:LineSegment
-                    End="90.0833324578902,23.7631578432225" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.14972048980493,20.6315789216112,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1397,7 +1553,7 @@ where [refTable].[StoreId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.3564557526668,31.2476412564596,96.3827734375,11.609375"
+              BoundingBox="-73.1465247772703,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1433,7 +1589,83 @@ where [refTable].[StoreId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-31.6016431290065,24.8205128205128,96.3827734375,11.609375"
+              BoundingBox="-31.2891431336634,41.9257763003715,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42.6666666666667"
+          Id="Package\Data Flow Task\Customer_Dim_Lookup"
+          TopLeft="824.999987706542,453.289482216261" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
+          TopLeft="817.124989075586,430.43860366459">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103.874998630956,22.8508785516709"
+              Start="0,0"
+              End="103.874998630956,15.3508785516709">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.42543927583543" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.42543927583543"
+                    Point2="0,11.4254392758354"
+                    Point3="4,11.4254392758354" />
+                  <mssgle:LineSegment
+                    End="99.8749986309563,11.4254392758354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="99.8749986309563,11.4254392758354"
+                    Point2="103.874998630956,11.4254392758354"
+                    Point3="103.874998630956,15.4254392758354" />
+                  <mssgle:LineSegment
+                    End="103.874998630956,15.3508785516709" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.74611259672813,16.4254392758354,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output4]"
+          TopLeft="920.999987706542,495.956148882927">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139.333331545194,36.7324560662992"
+              Start="0,0"
+              End="139.333331545194,29.2324560662992">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.3662280331496" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.3662280331496"
+                    Point2="0,18.3662280331496"
+                    Point3="4,18.3662280331496" />
+                  <mssgle:LineSegment
+                    End="135.333331545194,18.3662280331496" />
+                  <mssgle:CubicBezierSegment
+                    Point1="135.333331545194,18.3662280331496"
+                    Point2="139.333331545194,18.3662280331496"
+                    Point3="139.333331545194,22.3662280331496" />
+                  <mssgle:LineSegment
+                    End="139.333331545194,29.2324560662992" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="21.4752790538468,23.3662280331496,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1446,7 +1678,7 @@ where [refTable].[StoreId] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1492,7 +1724,7 @@ where [refTable].[StoreId] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1515,7 +1747,7 @@ where [refTable].[StoreId] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1550,6 +1782,29 @@ where [refTable].[StoreId] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Customer_Dim_Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Customer_Dim]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
